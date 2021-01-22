@@ -1,5 +1,6 @@
 #!/bin/bash
-url=$(pwd)
+#url=$(pwd)
+url=$(dirname $(readlink -f "$0") || (cd "$(dirname "$0")";pwd))
 configUrl="$url/config/guard.config"
 #检测配置文件是否存在
 if [ ! -f "$configUrl" ];
